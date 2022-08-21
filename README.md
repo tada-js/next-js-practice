@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+## 프로젝트 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br><br>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 프로젝트 목표
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+next.js를 학습하기 위한 클론 코딩
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<br><br>
 
-## Learn More
+## 무엇을 했고 무엇을 알게 되었는지!
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- next.js를 사용하여 SEO 최적화에 도움을 주었습니다.
+- 상황에 맞는 Pre-rendering을 하였습니다.
+  - 상품 상세 페이지는 Pre-rendering 중 `getServerSideProps`를 사용하여 SSR로 구현하였습니다. SSR로 구현한 이유는 요청마다 html을 생성하여 상품의 가격, 정보 등의 데이터가 바뀌었을 때를 대비하고자 입니다.
+- `next/link`, `next/router`를 사용하여 라우팅 했습니다. `a` 태그와 `location.href`를 사용해도 되지만, 사용한다면 페이지가 새로고침 되면서 이동되기 때문에 요청도 늘어나고 SPA의 장점이 사라지기 때문에 사용하지 않았습니다.
+- `_app.js`에서 페이지 전환시 헤더(Top), 푸터(Footer) 레이아웃이 유지되도록 하였습니다.
+- `_document.js`는 서버에서 렌더링 되므로 이벤트 핸들러는 동작하지 않는 것을 알게 되었습니다.
