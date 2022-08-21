@@ -1,11 +1,9 @@
 import Axios from "axios";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { Loader } from "semantic-ui-react";
 import Item from "../../src/components/Item";
 
 const Post = ({ item }) => {
+  // getServerSideProps의 응답값을 item에 담아서 props로 넘겨줌
   return (
     <>
       {item && (
@@ -31,6 +29,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
+      // 받아온 응답값을 item에 넣어줌
       item: data,
     },
   };
