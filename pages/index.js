@@ -27,6 +27,7 @@ export default function Home() {
     <>
       <Head>
         <title>HOME | tada-js</title>
+        <meta name="description" content="tada-js 홈"></meta>
       </Head>
       {isLoading && (
         <div style={{ padding: "300px 0" }}>
